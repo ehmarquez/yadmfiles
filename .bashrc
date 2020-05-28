@@ -100,14 +100,18 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Extra bash functions from dotfiles repo
+# Extra bash functions
 if [ -f ~/.bash_extras ]; then
     . ~/.bash_extras
+fi
+
+# Local environment setups needed (not added in repo)
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -121,6 +125,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-# Add DOCKER HOST running on Windows
-export DOCKER_HOST=tcp://localhost:2375
