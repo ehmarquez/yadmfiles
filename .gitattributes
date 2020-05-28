@@ -1,2 +1,3 @@
 # Set repo to LF line endings
-text eol=lf
+text=auto
+.* text eol=lf
