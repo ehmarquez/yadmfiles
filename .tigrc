@@ -1,0 +1,13 @@
+bind main ! !?git revert %(commit)
+bind main B !git rebase  -i %(commit)
+
+
+bind status a !?git commit --amend
+bind status P !git push origin
+
+bind stash D !?git stash drop %(stash)
+bind stash A !?git stash apply %(stash)
+
+# Works for WSL workstations
+bind generic 0 @sh -c "explorer.exe 'https://'$(git remote -v | grep -Eo 'github.com[:/][^.]+' | head -1 | tr : /)'/commit/%(commit)'" 
+bind generic 9 !@sh -c "git show -s --format=%s %(commit) | clip.exe" # copy commit to clipboard
