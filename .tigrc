@@ -1,6 +1,6 @@
 bind main ! !?git revert %(commit)
 bind main B !git rebase  -i %(commit)
-
+bind main T !@git tag %(prompt) %(commit)
 
 bind status a !?git commit --amend
 bind status P !git push origin

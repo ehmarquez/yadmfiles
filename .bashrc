@@ -131,6 +131,15 @@ if ! shopt -oq posix; then
 fi
 
 
+# Python virtual environment
+function set_virtualenv() {
+  if [ -z "$VIRTUALENV" ]; then
+    PYTHON_VENV=""
+  else
+    PYTHON_VENV="($(basename $VIRTUAL_ENV))"
+  fi
+}
+
 # Add git info
 source ~/.git-prompt.sh
-PROMPT_COMMAND='__git_ps1 "\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]" "\n\[\033[00m\]\$ "'
+PROMPT_COMMAND='set_virtualenv __git_ps1 "${PYTHON_VENV} \[\033[01;32m\]\u@@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]" "\n\[\033[00m\]\$ "'
