@@ -143,3 +143,6 @@ function set_virtualenv() {
 # Add git info
 source ~/.git-prompt.sh
 PROMPT_COMMAND='set_virtualenv __git_ps1 "${PYTHON_VENV} \[\033[01;32m\]\u@@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]" "\n\[\033[00m\]\$ "'
+
+# Add default browser for xdg-open
+export BROWSER="explorer.exe"
