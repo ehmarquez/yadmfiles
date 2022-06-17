@@ -18,6 +18,7 @@ alias gmv="git mv"
 alias gbr="git branch"
 alias gft="git fetch"
 alias grb="git rebase"
+alias gms="git merge --squash"
 
 #---------------------#
 # Workspace shortcuts #
