@@ -9,5 +9,9 @@ bind stash D !?git stash drop %(stash)
 bind stash A !?git stash apply %(stash)
 
 # Works for WSL workstations
-bind generic 0 @sh -c "explorer.exe 'https://'$(git remote -v | grep -Eo 'github.com[:/][^.]+' | head -1 | tr : /)'/commit/%(commit)'" 
-bind generic 9 !@sh -c "git show -s --format=%s %(commit) | clip.exe" # copy commit to clipboard
+bind generic 7 !@sh -c "git show -s --format=%s %(commit) | clip.exe" # copy commit msg to clipboard
+bind generic 8 !@sh -c "echo -n %(commit) | clip.exe && echo Copied %(commit) to clipboard" # copy commit hash to clipboard
+
+
+bind generic 9 @sh -c "explorer.exe 'https://'$(git remote -v | grep -Eo 'github.com[:/][^.]+' | head -1 | tr : /)'/commit/%(commit)'" 
+bind generic 0 @sh -c "explorer.exe 'https://'$(git remote -v | grep -Eo 'github.com[:/][^.]+' | head -1 | tr : /)'/tree/%(branch)'" 
