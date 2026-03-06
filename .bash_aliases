@@ -10,6 +10,7 @@ alias gdf="git diff"
 alias gdt="git difftool"
 alias glo="git log --pretty=oneline"
 alias gps="git push"
+alias gpf="git push --force-with-lease"
 alias gpl="git pull"
 alias gcb="git checkout -b"
 alias gap="git add -p"
@@ -19,6 +20,7 @@ alias gbr="git branch"
 alias gft="git fetch"
 alias grb="git rebase"
 alias gms="git merge --squash"
+alias gcp="git cherry-pick --continue"
 
 #---------------------#
 # Workspace shortcuts #
